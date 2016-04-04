@@ -11,8 +11,9 @@
     ~/.bashrc: bashrc
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
-    ~/.gitignore_global: gitignore_global
-    ~/.gitconfig: gitconfig
+    ~/.gitignore_global: git/gitignore_global
+    ~/.gitconfig: git/gitconfig
 
 - shell:
+  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   - git update-submodules # after linking ~/.gitconfig

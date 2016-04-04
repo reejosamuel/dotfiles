@@ -70,6 +70,9 @@ export EDITOR=$VISUAL
 alias fuck='eval $(thefuck $(fc -ln -1))'
 # You can use whatever you want as an alias, like for Mondays:
 alias FUCK='fuck'
+
+alias rmdir='rm -rf'
+
 #
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then

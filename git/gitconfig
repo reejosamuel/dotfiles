@@ -1,0 +1,26 @@
+[filter "media"]
+  clean = git media clean %f
+  smudge = git media smudge %f
+  required = true
+[user]
+  name = Reejo Samuel
+  email = m@reejosamuel.com
+[core]
+  excludesfile = /Users/reejosamuel/.gitignore_global
+  editor = /usr/bin/vim
+[difftool "sourcetree"]
+  cmd = /usr/local/bin/bcomp $LOCAL $REMOTE
+  path =
+[mergetool "sourcetree"]
+  cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED
+  trustExitCode = true
+[push]
+  default = simple
+[filter "lfs"]
+  clean = git lfs clean %f
+  smudge = git lfs smudge %f
+  required = true
+[alias]
+  stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git diff-index --quiet HEAD; s=$?; [ $s != 0 ] && git stash save \"tmp stash from stash-rename\"; git stash apply $rev && shift && git stash save \"$@\" && [ $s != 0 ] && git stash pop stash@{1}; }; _"
+  update-submodules = submodule update --init --recursive
+  upgrade-submodules = submodule update --init --remote
