@@ -13,7 +13,11 @@
     ~/.zshrc: zshrc
     ~/.gitignore_global: git/gitignore_global
     ~/.gitconfig: git/gitconfig
+    ~/.gemrc: gemrc
+    ~/.pryrc: pryrc
+    ~/.irbrc: irbrc
 
 - shell:
-  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  #- sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  #- wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
   - git update-submodules # after linking ~/.gitconfig
