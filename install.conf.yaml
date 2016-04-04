@@ -1,0 +1,18 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.profile: profile
+    ~/.bash_profile: bash_profile
+    ~/.bashrc: bashrc
+    ~/.vimrc: vimrc
+    ~/.zshrc: zshrc
+    ~/.gitignore_global: gitignore_global
+    ~/.gitconfig: gitconfig
+
+- shell:
+  - git update-submodules # after linking ~/.gitconfig
