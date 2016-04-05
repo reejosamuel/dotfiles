@@ -9,6 +9,7 @@
   ca = commit --amend -v
   save = commit -a -m "Save"
   co = checkout
+  corb = checkout -tb
   di = diff
   dis = diff --stat
   diw = diff --color-words
@@ -26,7 +27,7 @@
   noff = merge --no-ff
   fa = fetch --all --tags --prune
   pullff = pull --ff-only
-  pullrb = pull --rebase
+  pull = pull --rebase
   mirror-remote = ! "mr() { git push \"${2}\" \"refs/remotes/${1}/*:refs/heads/*\" && git remote set-head \"${2}\" -a; }; mr"
   count = diff --stat "4b825dc642cb6eb9a060e54bf8d69288fbee4904" # hash of empty tree
   credit = shortlog -sn
@@ -101,12 +102,12 @@
   editor = "/usr/local/bin/sublime -w"
 
 [difftool "sourcetree"]
-  cmd = /usr/local/bin/bcomp $LOCAL $REMOTE
-  path =
+	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE
+	path =
 
 [mergetool "sourcetree"]
-  cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED
-  trustExitCode = true
+	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED
+	trustExitCode = true
 
 [credential]
   helper = osxkeychain

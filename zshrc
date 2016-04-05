@@ -46,13 +46,17 @@ ZSH_THEME="miloshadzic" #miloshadzic
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-
 plugins=(autojump jump gem last-working-dir lol osx pod sudo)
 
+# oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+
+# External plugins (initialized before)
+source ~/.zsh/plugins_before.zsh
 
 # Bootstrap
 source ~/.zsh/bootstrap.zsh
+
 
 # User configuration
 export PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin"
@@ -102,3 +106,7 @@ alias rmdir='rm -rf'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Syntax highlighting
+# preferred to be loaded at the end of zshrc
+source ~/.zsh/syntax.zsh
