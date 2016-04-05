@@ -51,12 +51,19 @@ plugins=(autojump jump gem last-working-dir lol osx pod sudo)
 
 source $ZSH/oh-my-zsh.sh
 
+# Bootstrap
+source ~/.zsh/bootstrap.zsh
+
 # User configuration
+export PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin"
+export PATH="$PATH:$HOME/.rvm/bin"    # Add RVM to PATH for scripting
+export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="$PATH:/usr/local/heroku/bin"
+export PATH="$PATH:/usr/local/go/bin" # Add Go Lang to PATH
+
+# Oracle configuration
 export DYLD_LIBRARY_PATH=/var/lib/oracle/instantclient_11_2
 export ORACLE_HOME=/var/lib/oracle/instantclient_11_2
-export PATH="/Users/reejosamuel/.rvm/gems/ruby-2.1.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$PATH:/usr/local/go/bin" # Add Go Lang to PATH
-export PATH="$PATH:$HOME/.rvm/bin"    # Add RVM to PATH for scripting
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

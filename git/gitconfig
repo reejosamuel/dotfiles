@@ -108,6 +108,9 @@
   cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED
   trustExitCode = true
 
+[credential]
+  helper = osxkeychain
+
 # upstream - push the current branch to its upstream branch...
 # simple - like upstream, but refuses to push if the upstream branch’s name is different from the local one...
 # current - push the current branch to a branch of the same name.

@@ -3,6 +3,10 @@
       create: true
       relink: true
 
+- shell:
+  #- sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  #- wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
+
 - clean: ['~']
 
 - link:
@@ -16,8 +20,7 @@
     ~/.gemrc: gemrc
     ~/.pryrc: pryrc
     ~/.irbrc: irbrc
+    ~/.zsh: zsh
 
 - shell:
-  #- sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  #- wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
   - git update-submodules # after linking ~/.gitconfig
