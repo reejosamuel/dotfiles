@@ -5,7 +5,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="miloshadzic" #miloshadzic
+ZSH_THEME="miloshadzic"
+#miloshadzic - personal custom fav
+# agnoster
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -83,6 +85,8 @@ alias fuck='eval $(thefuck $(fc -ln -1))'
 alias FUCK='fuck'
 
 alias rmdir='rm -rf'
+
+alias fileinfos='find . -iname "*.*" -exec file {} \;'
 
 #
 # Preferred editor for local and remote sessions
