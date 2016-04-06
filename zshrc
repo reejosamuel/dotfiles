@@ -59,6 +59,7 @@ source ~/.zsh/plugins_before.zsh
 # Bootstrap
 source ~/.zsh/bootstrap.zsh
 
+source ~/.zsh/prompt.zsh
 
 # User configuration
 export PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin"
