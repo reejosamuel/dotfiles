@@ -14,7 +14,7 @@ autoload -U colors && colors
 
 # Make using 256 colors easier
 if [[ "$(tput colors)" == "256" ]]; then
-    source ~/.zsh/plugins/spectrum.zsh
+    source ~/.oh-my-zsh/lib/spectrum.zsh
     # change default colors
     fg[green]=$FG[064]
     fg[cyan]=$FG[037]
@@ -89,7 +89,7 @@ function PR_ARROW() {
 
 # Set custom rhs prompt
 # User in red (for root) or violet (for regular user)
-RPR_SHOW_USER=true # Set to false to disable user in rhs prompt
+RPR_SHOW_USER=false # Set to false to disable user in rhs prompt
 function RPR_USER() {
     if [[ "${RPR_SHOW_USER}" == "true" ]]; then
         echo "%(!.%{$fg[red]%}.%{$fg[violet]%})%B%n%b%{$reset_color%}"
@@ -97,7 +97,7 @@ function RPR_USER() {
 }
 
 # Host in yellow
-RPR_SHOW_HOST=true # Set to false to disable host in rhs prompt
+RPR_SHOW_HOST=false # Set to false to disable host in rhs prompt
 function RPR_HOST() {
     local colors
     colors=(yellow pink darkred brown neon teal)
