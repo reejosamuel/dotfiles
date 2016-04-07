@@ -82,13 +82,23 @@ export NLS_LANG=AMERICAN_AMERICA.UTF8
 export VISUAL=vim
 export EDITOR=$VISUAL
 
+
+# auto correct the last command
 alias fuck='eval $(thefuck $(fc -ln -1))'
-# You can use whatever you want as an alias, like for Mondays:
 alias FUCK='fuck'
 
+# windows alias for removing directories
 alias rmdir='rm -rf'
 
+# get file info of all files in a folder
+# userful for image dimension, size etc
 alias fileinfos='find . -iname "*.*" -exec file {} \;'
+
+# reload zshrc itself
+alias reload!='. ~/.zshrc'
+
+# iOS Simulator
+alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 
 #
 # Preferred editor for local and remote sessions

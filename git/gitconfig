@@ -54,6 +54,12 @@
   zip = ! "zip() { git archive --format zip --prefix=\"${PWD##*/}/\" HEAD -o ${1}; }; zip"
   stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git diff-index --quiet HEAD; s=$?; [ $s != 0 ] && git stash save \"tmp stash from stash-rename\"; git stash apply $rev && shift && git stash save \"$@\" && [ $s != 0 ] && git stash pop stash@{1}; }; _"
 
+
+  # git change-commits GIT_AUTHOR_EMAIL "old@email.com" "new@email.com" -- -10
+  # git change-commits GIT_AUTHOR_EMAIL "old@email.com" "new@email.com" -- -10
+
+  change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ $`echo $VAR` = \\\"$OLD\\\" ]]; then export $VAR=\\\"$NEW\\\"; fi\" $@; }; f "
+
 [diff]
   mnemonicPrefix = true
   wordRegex = "[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
@@ -101,7 +107,7 @@
 
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE
-	path = 
+	path =
 
 [mergetool "sourcetree"]
 	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED

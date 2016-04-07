@@ -3,7 +3,17 @@ Just another collection of dotfiles. Its a simple way for me to setup my termina
 
 ### Commands to remember
 ---
-Call `$ x` inside any xcode project to open the workspace (if any) or project file quickly.
+
+###### Xcode
+Call `$ x` inside any xcode project to open its workspace (if any) or project file quick.
+
+
+###### Git
+`$ git-wtf` give human readable info on status of the project
+
+`$ git-track` setup current branch to track remote. easy peasy
+
+`$ git-rank-contributors` List the name and email of all the contributors
 
 ### Tools to remember
 ---

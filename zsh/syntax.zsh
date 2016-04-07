@@ -1,4 +1,6 @@
 # Syntax highlighting
+# `$ spectrum_ls` command to list all fg colors
+
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
