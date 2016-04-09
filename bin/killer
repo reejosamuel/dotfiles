@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# killer itunes or pkill notes to kill the app with just name
+
+for X in `ps acx | grep -i $1 | awk {'print $1'}`; do
+  kill $X;
+done

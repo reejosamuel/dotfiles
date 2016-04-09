@@ -23,4 +23,5 @@
     ~/.zsh: zsh
 
 - shell:
+  - brew bundle install
   - git update-submodules # after linking ~/.gitconfig

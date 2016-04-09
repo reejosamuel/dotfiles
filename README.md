@@ -4,11 +4,11 @@ Just another collection of dotfiles. Its a simple way for me to setup my termina
 ### Commands to remember
 ---
 
-###### Xcode
+##### Xcode
 Call `$ x` inside any xcode project to open its workspace (if any) or project file quick.
 
 
-###### Git
+##### Git
 `$ git-wtf` give human readable info on status of the project
 
 `$ git-track` setup current branch to track remote. easy peasy

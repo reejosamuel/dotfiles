@@ -41,6 +41,7 @@ brew 'tree'
 brew 'wget'
 brew 'youtube-dl'
 brew 'homebrew/versions/node012'
+brew 'webkit2png'
 
 cask 'wkhtmltopdf'
 cask 'abgx360'
