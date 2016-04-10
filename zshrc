@@ -100,6 +100,9 @@ alias reload!='. ~/.zshrc'
 # iOS Simulator
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
 
+# SourceTree
+alias stree='open -a SourceTree'
+
 #
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then

@@ -9,7 +9,7 @@
   ca = commit --amend -v
   save = commit -a -m "Save"
   co = checkout
-  corb = checkout -tb
+  corb = "!f() { git checkout -tb $1 origin/$1; }; f"
   di = diff
   dis = diff --stat
   diw = diff --color-words
@@ -107,7 +107,7 @@
 
 [difftool "sourcetree"]
 	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE
-	path =
+	path = 
 
 [mergetool "sourcetree"]
 	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED
