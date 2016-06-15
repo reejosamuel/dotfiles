@@ -14,25 +14,25 @@ NORMAL=$(tput sgr0)
 AUTHOR=${1:-"`git config user.name`"}
 
 WEEKSTART="$( cut -d '-' -f 1 <<< "$2" )";
-WEEKSTART=${WEEKSTART:="Mon"}
+WEEKSTART=${WEEKSTART:="Sun"}
 
 WEEKEND="$( cut -d '-' -f 2 <<< "$2" )";
-WEEKEND=${WEEKEND:="Fri"}
+WEEKEND=${WEEKEND:="Thu"}
 
 SINCE="yesterday"
 
 
-## In case it is the start of week, we need to 
+## In case it is the start of week, we need to
 ## show the commits since the last weekend
 shopt -s nocasematch
-if [[ $WEEKSTART == "$(date +%a)" ]] ; then 
+if [[ $WEEKSTART == "$(date +%a)" ]] ; then
   SINCE="last $WEEKEND";
 fi
 
 ## For when the command has been run in the directory
 if [ ! -d ".git" ]; then
 
-	## Iterate through all the top level directories inside 
+	## Iterate through all the top level directories inside
 	## for repositories and show the standup data for them
 	for DIR in */ ; do
 
