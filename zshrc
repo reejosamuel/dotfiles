@@ -48,7 +48,7 @@ ZSH_THEME="miloshadzic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(autojump jump gem last-working-dir lol osx pod sudo)
+plugins=(autojump jump gem last-working-dir lol osx pod sudo docker)
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -82,6 +82,8 @@ export NLS_LANG=AMERICAN_AMERICA.UTF8
 export VISUAL=vim
 export EDITOR=$VISUAL
 
+# open sublime in the current folder, § is a key on my mac keyboard
+alias §='sublime .'
 
 # auto correct the last command
 alias fuck='eval $(thefuck $(fc -ln -1))'
@@ -102,6 +104,11 @@ alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Si
 
 # SourceTree
 alias stree='open -a SourceTree'
+
+# Weather on console
+alias weather='curl wttr.in/Dubai'
+
+alias gc='git clone'
 
 #
 # Preferred editor for local and remote sessions
