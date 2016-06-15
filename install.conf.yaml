@@ -21,6 +21,7 @@
     ~/.pryrc: pryrc
     ~/.irbrc: irbrc
     ~/.zsh: zsh
+    ~/.tmux.conf: tmux.conf
 
 - shell:
   - brew bundle install

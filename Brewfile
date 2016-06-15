@@ -47,6 +47,7 @@ brew 'isl'
 brew 'libmpc'
 brew 'mpfr'
 brew 'pcre'
+brew 'tmux'
 
 cask 'wkhtmltopdf'
 cask 'abgx360'
