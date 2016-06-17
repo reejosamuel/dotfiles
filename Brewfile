@@ -48,6 +48,7 @@ brew 'libmpc'
 brew 'mpfr'
 brew 'pcre'
 brew 'tmux'
+brew 'reattach-to-user-namespace'
 
 cask 'wkhtmltopdf'
 cask 'abgx360'
