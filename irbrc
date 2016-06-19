@@ -40,6 +40,12 @@ def load_gem(gem, &block)
 
 end
 
+# Clears the screen in irb
+def clear
+  system('clear')
+end
+alias :cl :clear
+
 # Highlighting and other features
 load_gem 'wirble' do
   Wirble.init
