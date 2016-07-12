@@ -21,6 +21,18 @@ echo "OSX Menu bar now shows date and time in 24 hours"
 # Set desktop as the bottom left hotcorner
 defaults write com.apple.dock wvous-bl-corner -int 4
 defaults write com.apple.dock wvous-bl-modifier -int 0
+echo "Bottom Left - Hot corner configured to Desktop"
+
+# Minimize windows into their application’s icon
+defaults write com.apple.dock minimize-to-application -bool true
+
+# Show indicator lights for open applications in the Dock
+defaults write com.apple.dock show-process-indicators -bool true
+
+# Don’t show Dashboard as a Space
+defaults write com.apple.dock dashboard-in-overlay -bool true
+
+
 
 # Finder: show all filename extensions
 # defaults write NSGlobalDomain AppleShowAllExtensions -bool true
