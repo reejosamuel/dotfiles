@@ -1,9 +1,11 @@
 - defaults:
     link:
       create: true
+      force:  true # required zsh etc already exists
       relink: true
 
 - shell:
+  #- /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   #- sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   #- wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
 
@@ -26,3 +28,5 @@
 - shell:
   - brew bundle install
   - git update-submodules # after linking ~/.gitconfig
+  - PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++')
+  - export PATH

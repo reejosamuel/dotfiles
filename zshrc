@@ -63,11 +63,10 @@ source ~/.zsh/bootstrap.zsh
 #source ~/.zsh/prompt.zsh
 
 # User configuration
-export PATH="$PATH:$HOME/.rvm/gems/ruby-2.1.2/bin"
-export PATH="$PATH:$HOME/.rvm/bin"    # Add RVM to PATH for scripting
+# export PATH="$PATH:$HOME/.rvm/bin"    # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="$PATH:/usr/local/heroku/bin"
 export PATH="$PATH:/usr/local/go/bin" # Add Go Lang to PATH
+# export PATH="$PATH:/usr/local/heroku/bin"
 
 # Oracle configuration
 export DYLD_LIBRARY_PATH=/var/lib/oracle/instantclient_11_2

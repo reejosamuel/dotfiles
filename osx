@@ -4,12 +4,29 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
+defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain InitialKeyRepeat -int 4
+
 # Finder: show hidden files by default
-#defaults write com.apple.finder AppleShowAllFiles -bool true
+# defaults write com.apple.finder AppleShowAllFiles -bool true
+
+# set the dark theme, requires restart
+defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
+echo "OSX Dark Theme set, Please log off to enable it"
+
+# show the date and time in 24-hour on the osx menu
+defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
+echo "OSX Menu bar now shows date and time in 24 hours"
+
+# Set desktop as the bottom left hotcorner
+defaults write com.apple.dock wvous-bl-corner -int 4
+defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Finder: show all filename extensions
-#defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+# defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show path bar
-#defaults write com.apple.finder ShowPathbar -bool true
+# defaults write com.apple.finder ShowPathbar -bool true
 
+echo "Reloading Dock and Finder!"
+killall Dock; killall SystemUIServer
