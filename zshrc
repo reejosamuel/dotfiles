@@ -105,7 +105,7 @@ alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Si
 alias stree='open -a SourceTree'
 
 # Weather on console
-alias weather='curl wttr.in/Dubai'
+alias weather='curl wttr.in/Amsterdam'
 
 alias gc='git clone'
 

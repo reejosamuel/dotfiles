@@ -106,19 +106,19 @@
   detachedHead = false
 
 [user]
-  name = Reejo Samuel
-  email = m@reejosamuel.com
+	name = Reejo Samuel
+	email = reejo.samuel@booking.com
 
 [core]
-  excludesfile = ~/.gitignore_global
+	excludesfile = /Users/rsamuel/.gitignore_global
   editor = "/usr/local/bin/sublime -w"
 
 [difftool "sourcetree"]
-	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 
 [mergetool "sourcetree"]
-	cmd = /usr/local/bin/bcomp $LOCAL $REMOTE $BASE $MERGED
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 
 [credential]
@@ -137,3 +137,5 @@
   smudge = git lfs smudge %f
   required = true
 
+[commit]
+	template = /Users/rsamuel/.stCommitMsg
