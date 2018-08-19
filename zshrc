@@ -12,7 +12,6 @@ ZSH_THEME="miloshadzic"
 # miloshadzic - personal custom fav
 # agnoster
 
-
 plugins=(autojump jump gem last-working-dir lol osx pod sudo docker)
 
 # oh-my-zsh
@@ -84,6 +83,8 @@ alias mitmproxy='mitmproxy --set console_palette=lowdark'
 alias masterup='git checkout master; git pull; git checkout -; git rebase master'
 
 alias ribase='git rebase -i $(git oldest-ancestor)'
+
+alias addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 
 
 # --------- UNUSED -------------

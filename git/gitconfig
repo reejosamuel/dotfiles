@@ -5,12 +5,15 @@
   bra = branch -vv --all
   bed = branch --edit-description
   aa = add --all :/
+  ap = add --patch # allows to stage just hunks
+  rp = reset --patch # undo staged hunks
   ci = commit -v
   ca = commit --amend -v
   save = commit -a -m "Save"
   co = checkout
   corb = "!f() { git checkout -tb $1 origin/$1; }; f"
   di = diff
+  ds = diff --staged
   dis = diff --stat
   diw = diff --color-words
   dc = diff --cached
@@ -124,6 +127,7 @@
 [core]
 	excludesfile = /Users/reejosamuel/.gitignore_global
   editor = "/usr/local/bin/sublime -w"
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
 [credential]
   helper = osxkeychain

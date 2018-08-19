@@ -24,6 +24,7 @@
     ~/.irbrc: irbrc
     ~/.zsh: zsh
     ~/.tmux.conf: tmux.conf
+    /usr/local/bin: rb
 
 - shell:
   - brew bundle install
