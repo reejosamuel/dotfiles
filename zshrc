@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.zsh
-
+export PATH=$GOPATH/bin:$PATH
 # --------- THEME -------------
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -51,7 +51,7 @@ export NLS_LANG=AMERICAN_AMERICA.UTF8
 
 # --------- ALIAS -------------
 # open sublime in the current folder, § is a key on my mac keyboard
-alias @@='sublime .'
+alias @@='code .'
 
 # auto correct the last command
 alias fuck='eval $(thefuck $(fc -ln -1))'
@@ -82,10 +82,14 @@ alias mitmproxy='mitmproxy --set console_palette=lowdark'
 
 alias masterup='git checkout master; git pull; git checkout -; git rebase master'
 
+alias g!='git checkout master; git fa; git pull'
+
 alias ribase='git rebase -i $(git oldest-ancestor)'
 
 alias addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 
+# alias python=/usr/local/bin/python3
+# alias pip=/usr/local/bin/pip3
 
 # --------- UNUSED -------------
 # Uncomment the following line to use case-sensitive completion.
@@ -133,3 +137,4 @@ alias addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignor
 source ~/.zsh/syntax.zsh
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+export PATH="/usr/local/sbin:$PATH"

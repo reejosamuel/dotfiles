@@ -5,17 +5,16 @@
       relink: true
 
 - shell:
-  #- /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  #- sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  #- wget -O - https://raw.githubusercontent.com/nvbn/thefuck/master/install.sh | sh - && $0
+#   - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#   - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 - clean: ['~']
 
 - link:
     ~/.profile: profile
-    ~/.bash_profile: bash_profile
-    ~/.bashrc: bashrc
-    ~/.vimrc: vimrc
+    # ~/.bash_profile: bash_profile
+    # ~/.bashrc: bashrc
+    # ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.gitignore_global: git/gitignore_global
     ~/.gitconfig: git/gitconfig
@@ -23,8 +22,8 @@
     ~/.pryrc: pryrc
     ~/.irbrc: irbrc
     ~/.zsh: zsh
-    ~/.tmux.conf: tmux.conf
-    /usr/local/bin: rb
+    # ~/.tmux.conf: tmux.conf
+    # /usr/local/bin: rb
 
 - shell:
   - brew bundle install

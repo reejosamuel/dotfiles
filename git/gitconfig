@@ -10,7 +10,7 @@
   ci = commit -v
   ca = commit --amend -v
   save = commit -a -m "Save"
-  co = checkout
+  cm = checkout master
   corb = "!f() { git checkout -tb $1 origin/$1; }; f"
   di = diff
   ds = diff --staged
@@ -73,6 +73,13 @@
 [diff]
   mnemonicPrefix = true
   wordRegex = "[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"
+	algorithm = patience
+
+[diff "pdf"]
+  textconv = pdfinfo
+
+[difftool "image_diff"]
+  cmd = compare $REMOTE $LOCAL png:- | montage -geometry +4+4 -label "original" $LOCAL -label "diff" - -label "changed" $REMOTE output.png
 
 [color]
   diff = auto
@@ -111,9 +118,6 @@
 [mergetool]
   keepBackup = false
 
-[credential]
-  helper = cache --timeout=3600
-
 [grep]
   lineNumber = true
 
@@ -126,11 +130,13 @@
 
 [core]
 	excludesfile = /Users/reejosamuel/.gitignore_global
-  editor = "/usr/local/bin/sublime -w"
+  editor = "/usr/local/bin/code --wait"
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	attributesfile = ~/.gitattributes
+	commitGraph = true
 
 [credential]
-  helper = osxkeychain
+	helper = store --file /opt/dev/var/private/git_credential_store
 
 # upstream - push the current branch to its upstream branch...
 # simple - like upstream, but refuses to push if the upstream branch’s name is different from the local one...
@@ -138,18 +144,15 @@
 [push]
   default = simple
 
-# https://git-lfs.github.com
-# Large file storage in git
-[filter "lfs"]
-  clean = git lfs clean %f
-  smudge = git lfs smudge %f
-  required = true
-
 [rerere]
 	enabled = true
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
+[commit]
+	template = /Users/reejosamuel/.stCommitMsg
+	gpgsign = true
+[protocol]
+	version = 2
+[gc]
+	writeCommitGraph = true
+[gpg]
+	program = /usr/local/MacGPG2/bin/gpg
