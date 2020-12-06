@@ -35,6 +35,7 @@ export PATH="$PATH:/usr/local/go/bin" # Add Go Lang to PATH
 export PATH="$PATH:/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
 export PATH="$PATH:$HOME/bin:$PATH"
 export GOPATH=$HOME
+export GPG_TTY=$(tty)
 
 # export PATH="$PATH:/usr/local/heroku/bin"
 
