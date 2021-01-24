@@ -1,0 +1,25 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"ApplySyntax",
+		"ayu",
+		"BracketHighlighter",
+		"ChangeQuotes",
+		"Colorsublime",
+		"GitGutter",
+		"Invisible Tabs Spaces Switcher",
+		"Package Control",
+		"Pretty JSON",
+		"Ruby Completions",
+		"RubyEval",
+		"SideBarEnhancements",
+		"SublimeERB",
+		"SublimeLinter-rubocop",
+		"SublimeLinter-ruby"
+	]
+}

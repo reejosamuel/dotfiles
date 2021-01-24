@@ -131,7 +131,7 @@
 
 [core]
 	excludesfile = /Users/reejosamuel/.gitignore_global
-  editor = "/usr/local/bin/code --wait"
+  editor = "/usr/local/bin/subl -n -w"
 	pager = diff-so-fancy | less --tabs=4 -RFX
 	attributesfile = ~/.gitattributes
 	commitGraph = true
@@ -144,6 +144,12 @@
 # current - push the current branch to a branch of the same name.
 [push]
   default = simple
+
+[pull]
+	rebase = true
+
+[fetch]
+	prune = true
 
 [rerere]
 	enabled = true

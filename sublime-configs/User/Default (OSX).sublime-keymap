@@ -1,0 +1,12 @@
+[
+  { "keys": ["super+backspace"], "command": "jump_back" },
+  { "keys": ["super+enter"], "command": "goto_definition" },
+  { "keys": ["super+shift+'"], "command": "change_quotes" },
+  { "keys": ["super+shift+j"], "command": "reveal_in_side_bar"},
+  { "keys": ["super+shift+/"], "command": "git_gutter_diff_popup" },
+  { "keys": ["super+shift+"], "command": "erb", "context":
+      [
+        { "key": "selector", "operator": "equal", "operand": "text.html.ruby, text.haml, source.yaml, source.css, source.scss, source.js, source.coffee" }
+      ]
+    }
+]
