@@ -2,6 +2,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_CUSTOM=$HOME/.zsh
 export PATH=$GOPATH/bin:$PATH
+
 # --------- THEME -------------
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -12,7 +13,7 @@ ZSH_THEME="miloshadzic"
 # miloshadzic - personal custom fav
 # agnoster
 
-plugins=(autojump jump gem last-working-dir lol osx pod sudo docker)
+plugins=(zsh-autosuggestions autojump jump gem last-working-dir lol osx pod sudo docker)
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -51,28 +52,18 @@ export NLS_LANG=AMERICAN_AMERICA.UTF8
 
 
 # --------- ALIAS -------------
-# open sublime in the current folder, § is a key on my mac keyboard
-alias @@='code .'
-
-# auto correct the last command
-alias fuck='eval $(thefuck $(fc -ln -1))'
-alias FUCK='fuck'
-
 # windows alias for removing directories
 alias rmdir='rm -rf'
 
 # get file info of all files in a folder
 # userful for image dimension, size etc
-alias fileinfos='find . -iname "*.*" -exec file {} \;'
+alias info='find . -iname "*.*" -exec file {} \;'
 
 # reload zshrc itself
 alias reload!='. ~/.zshrc'
 
 # iOS Simulator
 alias simulator="open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
-
-# SourceTree
-alias stree='open -a SourceTree'
 
 # Weather on console
 alias weather='curl wttr.in/Ottawa'
@@ -81,13 +72,13 @@ alias gc='git clone'
 
 alias mitmproxy='mitmproxy --set console_palette=lowdark'
 
-alias masterup='git checkout master; git pull; git checkout -; git rebase master'
+alias fresh='git checkout master; git pull; git checkout -; git rebase master'
 
-alias g!='git checkout master; git fa; git pull'
+alias masterup='git checkout master; git fa; git pull'
 
 alias ribase='git rebase -i $(git oldest-ancestor)'
 
-alias addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
+alias add-nw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 
 # alias python=/usr/local/bin/python3
 # alias pip=/usr/local/bin/pip3
@@ -131,7 +122,6 @@ alias addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignor
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-
 
 # Syntax highlighting
 # preferred to be loaded at the end of zshrc
