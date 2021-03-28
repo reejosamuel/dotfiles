@@ -126,6 +126,7 @@ alias add-nw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --igno
 # Syntax highlighting
 # preferred to be loaded at the end of zshrc
 source ~/.zsh/syntax.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 export PATH="/usr/local/sbin:$PATH"

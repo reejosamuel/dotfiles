@@ -4,17 +4,13 @@
       force:  true # required zsh etc already exists
       relink: true
 
-- shell:
-  - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 - clean: ['~']
+
+- create:
+    - ~/.config/nvim
 
 - link:
     ~/.profile: profile
-    # ~/.bash_profile: bash_profile
-    # ~/.bashrc: bashrc
-    # ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.gitignore_global: git/gitignore_global
     ~/.gitconfig: git/gitconfig
@@ -23,10 +19,12 @@
     ~/.irbrc: irbrc
     ~/.zsh: zsh
     # ~/.tmux.conf: tmux.conf
-    # /usr/local/bin: rb
 
 - shell:
+  - [git submodule update --init --recursive, Intalling submodules] # after linking ~/.gitconfig
+  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  
   - brew bundle install
-  - git update-submodules # after linking ~/.gitconfig
-  - PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++')
-  - export PATH
+
+    # - PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++')
+    # - export PATH
