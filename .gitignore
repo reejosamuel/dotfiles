@@ -1,1 +1,3 @@
 nvim/autoload/plugged/
+nvim/.netrwhists
+configs/Brewfile.lock.json

@@ -46,12 +46,6 @@ def clear
 end
 alias :cl :clear
 
-# Highlighting and other features
-load_gem 'wirble' do
-  Wirble.init
-  Wirble.colorize
-end
-
 # Improved formatting for collections
 load_gem 'hirb' do
   Hirb.enable

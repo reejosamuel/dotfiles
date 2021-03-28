@@ -1,6 +1,9 @@
 # Enable full keyboard access for all controls
 # defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+# disable the DS_Store network files on every folder
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
 # Disable press-and-hold for keys in favor of key repeat
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
@@ -16,7 +19,7 @@ echo "OSX Dark Theme set, Please log off to enable it"
 
 # show the date and time in 24-hour on the osx menu
 # defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
-echo "OSX Menu bar now shows date and time in 24 hours"
+# echo "OSX Menu bar now shows date and time in 24 hours"
 
 # Set desktop as the bottom left hotcorner
 # defaults write com.apple.dock wvous-bl-corner -int 4

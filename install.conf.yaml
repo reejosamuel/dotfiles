@@ -6,21 +6,25 @@
 
 - clean: ['~']
 
+- shell:
+  - [rm -rf ~/.oh-my-zsh, Removing old oh-my-zsh]
+  - [sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)", "Installing fresh oh-my-zsh"]
+
 - link:
-    ~/.zshrc: zshrc
     ~/.gitignore_global: git/gitignore_global
     ~/.gitconfig: git/gitconfig
-    ~/.gemrc: gemrc
-    ~/.irbrc: irbrc
     ~/.zsh: zsh
+    ~/.zshrc: configs/zshrc
+    ~/.gemrc: configs/gemrc
+    ~/.irbrc: configs/irbrc
     ~/.config/nvim: nvim
-    # ~/.tmux.conf: tmux.conf
+    # ~/.tmux.conf: configs/tmux.conf
 
 - shell:
   - [git submodule update --init --recursive, Intalling submodules] # after linking ~/.gitconfig
-  - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  
-  - brew bundle install
-  - [sh -c 'curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' Installing vim-plug]
+  - [sh homebrew.sh, "Installing homebrew"]
+  - brew bundle install --file configs/Brewfile
+  - [sh -c 'curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim', Installing vim-plug]
     # - PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++')
     # - export PATH
+    #
