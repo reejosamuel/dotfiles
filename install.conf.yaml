@@ -6,18 +6,14 @@
 
 - clean: ['~']
 
-- create:
-    - ~/.config/nvim
-
 - link:
-    ~/.profile: profile
     ~/.zshrc: zshrc
     ~/.gitignore_global: git/gitignore_global
     ~/.gitconfig: git/gitconfig
     ~/.gemrc: gemrc
-    ~/.pryrc: pryrc
     ~/.irbrc: irbrc
     ~/.zsh: zsh
+    ~/.config/nvim: nvim
     # ~/.tmux.conf: tmux.conf
 
 - shell:
@@ -25,6 +21,6 @@
   - sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  
   - brew bundle install
-
+  - [sh -c 'curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' Installing vim-plug]
     # - PATH=$(echo "$PATH" | awk -v RS=':' -v ORS=":" '!a[$1]++')
     # - export PATH
