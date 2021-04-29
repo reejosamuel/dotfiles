@@ -13,7 +13,7 @@ set mouse=a
 set tabstop=2		" Insert 2 spaces for a tab
 set shiftwidth=2	" Change the number of space characters inserted for indentation
 set smartindent
-set number
+set number relativenumber
 set clipboard=unnamedplus
 set showtabline=2
 set updatetime=300
@@ -36,8 +36,8 @@ let g:fzf_buffers_jump = 1
 let g:strip_only_modified_lines=1
 let g:strip_whitespace_confirm=0
 let g:strip_whitelines_at_eof=1
-let g:show_spaces_that_precede_tabs=1
-
+let g:better_whitespace_operator='_s'
+let test#strategy = "neovim"
 
 set background=dark
 set t_Co=256
@@ -59,3 +59,10 @@ lua require("lsp")
 au! BufWritePost $MYVIMRC source %
 au FocusGained,BufEnter * :checktime
 
+" Automatic relative number in normal mode
+" and aboslute number in insert mode
+augroup numbertoggle
+  autocmd!
+	autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup END
