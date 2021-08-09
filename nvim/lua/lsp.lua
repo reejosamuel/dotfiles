@@ -1,3 +1,4 @@
+require("twilight").setup {}
 local nvim_lsp = require('lspconfig')
 local saga = require('lspsaga').init_lsp_saga()
 

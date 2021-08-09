@@ -15,6 +15,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'liuchengxu/vim-which-key'
+Plug 'folke/twilight.nvim'
 " Plug 'lisposter/vim-blackboard'
 
 " language
