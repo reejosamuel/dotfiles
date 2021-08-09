@@ -1,7 +1,32 @@
 # File to be placed in public dotfiles repo
 
+# Intall vim dependencies
+if ! command -v fzf &> /dev/null; then
+  sudo apt-get install -y fzf
+fi
+
+if ! command -v rg &> /dev/null; then
+  sudo apt-get install -y ripgrep
+fi
+
+
+
 if [[ "$SPIN" = 1 ]]
 then
+  # link the dotfiles
+  # cd ~/dotfiles
+  # ./install
+
+  # open vim and install plugins
+  nvim +PlugUpdate +qa
+fi
+if [[ "$SPIN" = 1 ]]
+then
+  sudo add-apt-repository -y ppa:neovim-ppa/unstable
+  sudo add-apt-repository -y ppa:aos1/diff-so-fancy
+  sudo apt-get update
+  sudo apt-get install -y neovim diff-so-fancy autojump
+
   # Only run nested steps in Spin + shopify/shopify workspaces.
   if [[ "$SPIN_REPO_SOURCE_PATH" = "/src/github.com/shopify/shopify" ]]
   then
@@ -12,4 +37,7 @@ then
     . /cartridges/shopify-reportify-config/setup.sh
     restart
   fi
+
+
 fi
+
