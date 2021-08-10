@@ -13,8 +13,9 @@ brew 'ssh-copy-id'
 brew 'wget'
 brew 'youtube-dl'
 brew 'diff-so-fancy'
+brew 'ripgrep'
+brew 'fzf'
 
-# 
 # brew 'swiftlint'
 # brew 'go'
 # brew 'imagemagick'
