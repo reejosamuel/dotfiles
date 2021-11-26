@@ -8,7 +8,7 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden --follow'
 
 ZSH_THEME="miloshadzic"
 
-plugins=(zsh-autosuggestions autojump jump last-working-dir osx sudo xcode docker)
+plugins=(zsh-autosuggestions autojump jump last-working-dir macos sudo xcode docker)
 
 
 # oh-my-zsh

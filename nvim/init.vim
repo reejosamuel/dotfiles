@@ -25,11 +25,6 @@ set wrap linebreak nolist
 set hlsearch
 set ignorecase
 
-let g:nvim_tree_follow = 1
-let g:nvim_tree_auto_close = 1
-let g:nvim_tree_width = 50
-let g:nvim_tree_width_allow_resize  = 1
-"let g:nvim_tree_quit_on_open = 1
 let g:fzf_buffers_jump = 1
 
 "whitespace
@@ -55,6 +50,8 @@ hi CursorLine   cterm=NONE ctermbg=Black guibg=Black ctermfg=NONE guifg=NONE
 source $HOME/.config/nvim/keymaps.vim
 
 lua require("lsp")
+lua require("nvimtree")
+lua require("theme")
 
 au! BufWritePost $MYVIMRC source %
 au FocusGained,BufEnter * :checktime

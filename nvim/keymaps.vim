@@ -36,17 +36,11 @@ nnoremap <C-j> :m+<CR>==
 xnoremap <C-k> :m-2<CR>gv=gv
 xnoremap <C-j> :m'>+<CR>gv=gv
 
-" LSP complete
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#sCRoll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#sCRoll({ 'delta': -4 })
-
-
 nnoremap <silent><S-b> :BufferLinePick<CR>
 nnoremap <silent>[b :BufferLineCyclePrev<CR>
 nnoremap <silent>]b :BufferLineCycleNext<CR>
 
+nnoremap <leader>gb :Gitsigns toggle_current_line_blame<CR>
 
 " vim-test
 nmap <silent> t<C-n> :TestNearest<CR>
