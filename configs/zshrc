@@ -27,15 +27,18 @@ export PATH="$PATH:/usr/sbin"
 export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:/opt/homebrew/bin"
 
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+export PUPPETEER_EXECUTABLE_PATH=`which chromium`
+
 # -------------
 
 alias reload!='. ~/.zshrc'
 
 # -------------
 
-alias fresh='git checkout master; git pull; git checkout -; git rebase master'
+alias fresh='git checkout main; git pull; git checkout -; git rebase main'
 
-alias masterup='git checkout master; git fa; git pull'
+alias masterup='git checkout main; git fa; git pull'
 
 alias ribase='git rebase -i $(git oldest-ancestor)'
 
